@@ -19,7 +19,7 @@ function palindrome(palindrome) {
   return rightToLeft.toLowerCase() === leftToRight.toLowerCase();
 }
 
-function palindromeShort (str) {
+function palindromeES6 (str) {
   let s1 = Array.from(str).join('').toLowerCase();
   let s2 = Array.from(str).reverse().join('').toLowerCase();
   
