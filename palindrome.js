@@ -18,3 +18,10 @@ function palindrome(palindrome) {
 
   return rightToLeft.toLowerCase() === leftToRight.toLowerCase();
 }
+
+function palindromeShort (str) {
+  let s1 = Array.from(str).join('').toLowerCase();
+  let s2 = Array.from(str).reverse().join('').toLowerCase();
+  
+  return s1 === s2;
+}
