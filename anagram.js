@@ -8,7 +8,7 @@ function anagram(s1, s2) {
 
   while(s1Length--) {
 
-    if(s2.indexOf(s1[s1Length]) === -1) {
+    if(!~s2.indexOf(s1[s1Length])) {
       return false;
     }
   }
