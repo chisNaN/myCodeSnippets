@@ -1,6 +1,6 @@
 #[List currencies from **FIXER API**](http://api.fixer.io/latest)
 
->Copy paste this function in the Google spreadsheet script editor (corresponding to your active spreadsheet)
+>Copy paste this function in the Google script editor (corresponding to your active spreadsheet)
 
 ```js
 function convertFromEuro(currency) {
