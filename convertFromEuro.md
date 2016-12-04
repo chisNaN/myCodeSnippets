@@ -1,4 +1,4 @@
-###[List currencies from **FIXER API**](http://api.fixer.io/latest)
+#[List currencies from **FIXER API**](http://api.fixer.io/latest)
 
 >Copy paste this function in the Google spreadsheet script editor (corresponding to your active spreadsheet)
 
