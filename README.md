@@ -1,1 +1,1 @@
-:bulb: # I hope some useful snippets
+# I hope some useful snippets
