@@ -1,5 +1,5 @@
 <?php
-unction trimDatasPost(array $post, $keepIndexes = false) {
+function trimDatasPost(array $post, $keepIndexes = false) {
     $emptyField = false;
     $a = [];
     foreach ($post as $k => $v):
