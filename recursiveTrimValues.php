@@ -1,21 +1,15 @@
 <?php
 $a2=['foo' => 'bar', 'ez', 'level 1' => ['titi', 'toto', 'level 2' => ['pouet','proute'],' merdik'], 'zef', 'ezfzef', 'last' => ['john', 'doe']];
 
-function trimDatasPost(array $post, $a = [], $keys =[] ){
-    static $recur, $a, $strToEval, $strToEval2;
+function trimDatasPost(array $post, $keys =[] ){
+    static $recur, $a;
     $recur++;
     asort($post);
     foreach ($post as $k => $v): // $_POST = ['id' => 1, 'mult' => ['foo', 'bar]]
-        if(is_array($v)) {
-            $keys []= $k;
-              trimDatasPost($v, $a, $keys);
-        } else {
+        if(!is_array($v)) {
             $trimValues = trim($v);
             if(empty($trimValues)) return false;
-            if($recur === 1) {
-                $a [$k] = $trimValues;
-            } else{
-
+            if($recur > 1) {
                 $i = count($keys);
                 //echo '$a';
                 $str = '$a';
@@ -24,13 +18,17 @@ function trimDatasPost(array $post, $a = [], $keys =[] ){
                     //echo '[]';
                     $str .= '[]';
                 } //$strToEval .= '["'.$keys[$recur -(2 + $i)].'"]';
-                 //echo '[]="'.$v.'";';
+                //echo '[]="'.$v.'";';
                 $str .= '[]="'.$v.'";';
                 //echo '<br>'.$str;
                 //$strToEval2 .= '<br>'.str_repeat('["'.$keys[$recur -2].'"]', $recur -1);
                 //@eval('$a["'.$keys[$recur -2].'"][]="'.$v.'";');
                 eval($str);
-            }
+            } else $a [$k] = $trimValues;
+
+        } else {
+            $keys []= $k;
+            trimDatasPost($v, $keys);
         }
     endforeach;
     $recur--;
