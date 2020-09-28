@@ -10,15 +10,22 @@ function trimDatasPost(array $post, $keys =[] ){
             $trimValues = trim($v);
             if(empty($trimValues)) return false;
             if($recur > 1) {
+                /*echo '<br>----keys<br>';
+                var_dump($keys);
+                echo '-----';
                 $i = count($keys);
+                */
                 //echo '$a';
                 $str = '$a';
-                while($i--) {
+                //echo '<br>'.str_repeat('["'.$keys[$recur -1].'"]', $recur -1);
+                 $str .= str_repeat('[]', $recur -1);
+                /*while($i--) {
                     //echo '["'.$keys[$recur -(2 + $i)].'"]';
                     //echo '[]';
                     $str .= '[]';
                 } //$strToEval .= '["'.$keys[$recur -(2 + $i)].'"]';
-                //echo '[]="'.$v.'";';
+                */
+                //echo '[]="'.$v.'";<br>';
                 $str .= '[]="'.$v.'";';
                 //echo '<br>'.$str;
                 //$strToEval2 .= '<br>'.str_repeat('["'.$keys[$recur -2].'"]', $recur -1);
