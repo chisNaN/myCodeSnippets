@@ -7,8 +7,8 @@ function convertFromEuro(currency) {
     // Make a GET request and log the returned content.
     var r = UrlFetchApp.fetch('http://api.fixer.io/latest');
     var data = JSON.parse(r.getContentText());
-    //Logger.log(data.rates.[currency]);
-    return ~~data.rates[currency];
+    //Logger.log(data.rates[currency]);
+    return data.rates[currency].toFixed(2);
 }
 ```
 :bulb: Use it in a cell spreadsheet
