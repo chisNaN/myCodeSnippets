@@ -10,7 +10,7 @@ function myFunction() {
   let max =statusValues.length
   const buys = {}
   const sells = {}
-  let eur = 0
+  
   while(max--) {
     if (statusValues[max][0] === 'FILLED') {
       if (sideOrderValues[max][0] === 'BUY') {
